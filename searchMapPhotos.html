@@ -1,0 +1,23 @@
+﻿<html>
+	<head>
+		<link rel="stylesheet" type="text/css" href="searchPhotos.css">
+	</head>
+	<body>
+		<div class = "searchDiv">
+			<form method = "POST" action = "searchPhotos.php">
+			<input class = "searchBar" name = "searchText" type="text" placeholder="Search Photos..">
+			<input class ="button" name= "searchButton" src="assets/icons/button.png" type="image"/>
+			
+		</div>
+		<div style = "clear:both;">
+			<input type="radio" name="searchProp" value="per" checked >Search by Descreption<br>
+			<input type="radio" name="searchProp" value="cat"  >Search by Category<br>
+			<input type="radio" name="searchProp" value="usr"  >Search by Username<br>
+			<input type="radio" name="searchProp" value="nam"  >Search by Name<br><br>
+			<input type="radio" name="order" value="des" checked>Δημοφιλείς-Λιγότερο Δημοφιλείς<br>
+			<input type="radio" name="order" value="asc">Λιγότερο δημοφιλείς-Δημοφιλείς<br>
+		</div>
+			</form>
+	</body>
+
+</html>

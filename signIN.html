@@ -1,0 +1,39 @@
+<html>
+	<head>
+		<link rel="stylesheet" type="text/css" href="signin.css">
+	</head>
+	
+	<body background="assets/backgrounds/deadsilence.gif">
+	
+		<audio autoplay>
+		  <source src="DeadSilence.ogg" type="audio/ogg">
+		  <source src="DeadSilence.mp3" type="audio/mpeg">
+		Your browser does not support the audio element.
+		</audio> 
+		
+		<div class="navbar">
+			<a class="active" href="index.html">Home</a>
+			<a href = "display.html">MiNiPic</a>
+			<a href="#contact">Contact</a>
+			<a href="signUp.html">Sign Up</a>
+		</div> 
+		  
+		<form  style="background-color:#E6E6FA" name = "sign_in_form" method="post" action="sign_in.php">
+			<div class="imgcontainer">
+				<img src="assets/avatar/avatar.png" alt="Avatar" class="avatar">
+			</div>
+
+			<div class="container">
+			<b>Username</b>
+			<input type="text" placeholder="Enter Username" name="usr" required>
+
+			<b>Password</b>
+			<input type="password" placeholder="Enter Password" name="psw" required>
+
+			<button type="submit">Login</button>
+
+		</form> 
+	</body>
+
+
+</html>

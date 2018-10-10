@@ -1,0 +1,104 @@
+﻿<html>
+
+	<head>
+		<link rel="stylesheet" type="text/css" href="display.css">
+	</head>
+		<body>
+			<?php
+				session_start();
+				if (isset($_SESSION['usr'])) {					
+			?>
+				<div class="navbar">
+					 <a class="active" href="index.html">Home</a>
+					 <a href = "display.html">MiNiPic</a>
+					 <a href="#contact">Contact</a>
+					 <a href="JavaScript:newPopup('addnew.html');">Add new photo</a>	
+					 <a href="logout.php">Logout</a>
+				</div> 
+			<?php
+			}else {
+			?>
+				<div class="navbar">
+					 <a class="active" href="index.html">Home</a>
+					 <a href = "display.html">MiNiPic</a>
+					 <a href="#contact">Contact</a>
+					 <a href="signUp.html">Sign Up</a>
+					 <a href="signIn.html">Sign In</a>
+				</div> 
+			<?php
+			}
+			?>
+						
+			
+			
+
+			
+			  
+			
+			
+			<script type="text/javascript">
+			function newPopup(url) {
+				popupWindow = window.open(
+					url,'popUpWindow','height=600,width=900,left=10,top=10,resizable=yes,scrollbars=yes,toolbar=yes,menubar=no,location=no,directories=no,status=yes')
+			}
+			</script>
+			
+			<div  style = "border-size:solid-black;border-style:inset;>
+				<form name= "checkboxForm" method="GET" action="checkbox-form.php" class="checkboxclass" >
+					<p> Filters: </p>
+					
+					<div><label><input type="checkbox" name="a" id="a" value="all" checked >Όλες οι κατηγορίες </label></div>
+					<div><label><input type="checkbox" name="b" id="b" value="topia" >Τοπία</label></div>
+					<div><label><input type="checkbox" name="c" id="c" value="aksio" >Αξιοθέατα</label></div>
+					<div><label><input type="checkbox" name="d" id="d" value="gunaikes" >Γυναίκες</label></div>
+					<div><label><input type="checkbox" name="e" id="e" value="prosopa" >Πρόσωπα</label></div>
+					<div><label><input type="checkbox" name="f" id="f" value="antikeim">Αντικείμενα</label></div>
+					
+					<div><button>Go</button></div>
+				</form>
+				
+			</div>
+								
+			<div class = "searchDiv">
+				 <form method="GET">
+					 <input class = "searchBar" name = "searchText" type="text" placeholder="Search..">
+					 <input class ="button" name= "searchButton" src="assets/icons/button.png" type="image" />
+				 </form>
+			</div>
+			<script>	
+				//Αζαξ
+				function loadDoc() {
+
+					var xhttp = new XMLHttpRequest();
+					xhttp.onreadystatechange = function() {
+					if (this.readyState == 4 && this.status == 200) {
+					 document.getElementById("demo").innerHTML = this.responseText;
+					}
+				  };
+				  xhttp.open("GET", "ajax_info.txt", true);
+				  xhttp.send();
+				}
+				
+				
+				var images = ["assets/pictures/gunaikes1.jpg", "assets/pictures/gunaikes2.jpg", "assets/pictures/gunaikes3.jpg", "assets/pictures/topio1.jpg", "assets/pictures/topio2.jpg", "assets/pictures/prosopo1.jpg", "assets/pictures/prosopo2.jpg", "assets/pictures/antikeim1.jpg", "assets/pictures/aksio1.jpg", "assets/pictures/aksio2.jpg"];
+				for(var i =0;i<images.length;i++){
+					document.write("<table class = 'left'>");
+					document.write("<tr ><td rowspan='7'><img class = 'mikro' src = " + images[i]+ "></td></tr>");
+					var tmp = images[i].slice(16,images[i].length);
+					document.write("<tr><td valign='top' width = '40%' height='8.3%'><b>Name: </b>" + tmp + "</td></tr>");
+					document.write("<tr><td valign='top' height='8.3%'><b>Χρήστης:</b></td></tr>");
+					document.write("<tr><td valign='top' height='8.3%'><b>Κατηγορία:</b></td></tr>");
+					document.write("<tr><td valign='top' height='41.5%'><b>Περιγραφή:</b></td></tr>");
+					document.write("<tr><td valign='top' height='8.3%'><b>Χάρτης:</b></td></tr>");
+					document.write("<tr><td valign='top' height='24.9%'><b>Μ.Ο. Βαθμολογίας:</b> <br><b># Ψήφων:</b><br><b>Ψήφισε:<br>");
+					
+					
+					
+					document.write("</tr>");
+					document.write("</table>");
+				}		
+			</script>
+			
+		</body>
+	
+</html>

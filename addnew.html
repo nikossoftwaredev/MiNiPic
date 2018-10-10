@@ -1,0 +1,68 @@
+﻿<html>
+	<head>
+	</head>
+	<body onload="myMap()">
+		<form action = "test.php" name= "upload_form" method="POST" enctype="multipart/form-data">
+					 
+			 <table style="border:1px solid black;">
+				<tr><td>Περιγραφή..</td><td><textarea rows="4" cols="50" name="des" id="des" placeholder="Enter description"></textarea></textarea></td></tr>
+				<tr><td>Κατηγορία</td><td><form>
+					<select name ="category" id = "category">
+					<option selected value = "Topia">Τοπία 
+					<option value = "aksio">Αξιοθέατα
+					<option value = "antikeim">Αντικείμενα
+					<option value = "prosopa">Πρόσωπα
+					<option value = "gunaikes">Γυναίκες
+					</select>
+			   </td></tr>
+			   <tr><td>Διάλεξε εικόνα</td><td><input type="file" name="filename"></td></tr>
+			   <tr><td colspan = "2"><button>Submit</button></td></tr>
+			   </table>
+			  <input type="hidden" id="lat" name ="lat" value="37.983810">
+			  <input type="hidden" id="lng" name ="lng" value="23.727539">
+			  
+		
+			 <div id="googleMap" style="width:100%;height:400px;"></div>
+			 
+			
+			<script>
+			function myMap() {
+				var map = new google.maps.Map(document.getElementById('googleMap'), {
+					center:new google.maps.LatLng(37.983810,23.727539),
+					zoom:5,
+				});
+				
+				var marker = new google.maps.Marker({
+					position: new google.maps.LatLng(37.983810,23.727539), 
+					draggable:true,
+					title:"Drag me!"
+
+				});  					
+				marker.setMap(map);			
+				
+				
+				marker.addListener('dragend', getCrd);
+				
+			}		
+
+			function getCrd(event){
+				var lat = event.latLng.lat();
+				var lng = event.latLng.lng();
+				
+				console.log(lat +" " + lng);
+				
+				document.getElementById('lat').value = lat;
+				document.getElementById('lng').value = lng;
+			}
+			</script>
+			
+			<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCc11xKVfwKrkZN_xbNepnVPUbVWBq4xeg&callback=myMap" type="text/javascript"></script>
+
+		</form>		
+
+			 
+				
+			 
+		</form>
+	</body>
+</html>

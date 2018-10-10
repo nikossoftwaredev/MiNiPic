@@ -1,0 +1,27 @@
+.searchDiv{
+	
+	align:center;
+	top: 15%;
+	left:50%;
+
+	
+}
+.searchBar{
+	align:left;
+	float:left;
+	width:50%;
+	font-size: 300%;
+	
+	
+}
+.button{
+	
+	align:left;
+	float:left;
+	margin-left:20;
+	width:70;
+	border-radius: 50%;	
+	border: 1px solid black;
+	
+}
+

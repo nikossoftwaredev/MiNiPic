@@ -1,0 +1,41 @@
+<html>
+	<head>
+		<link rel="stylesheet" type="text/css" href="signup.css">
+	</head>
+	
+	<body background="assets/backgrounds/signinbg2.jpg">
+		<div class="navbar">
+			 <a class="active" href="index.html">Home</a>
+			 <a href = "display.html">MiNiPic</a>
+			 <a href="#contact">Contact</a>
+			 <a href="signIn.html">Sign In</a>
+		</div> 
+		 
+		<form  style="background-color:#E6E6FA" name = "sign_up_form" method="post" action="sign_up.php">
+			  <div class="imgcontainer">
+				<img src="assets/avatar/avatar.png" alt="Avatar" class="avatar">
+			  </div>
+
+			  <div class="container">
+				<b>Username</b>
+				<input type="text" placeholder="Enter Username" name="usr" required>
+
+				<b>Password</b>
+				<input type="password" placeholder="Enter Password" name="psw" required>
+				
+				<b>Repeat Password</b>
+				<input type="password" placeholder="Enter Password" name="repsw" required>
+				
+				<b>E-Mail</b>
+				<input type="text" placeholder="Enter E-Mail" name="mail" required>
+				
+
+				<button type="submit">Sign up</button>
+				
+				<p>Already have an account? <a href = "signIn.html"> Sign In</a>
+			
+		</form> 
+	</body>
+
+
+</html>

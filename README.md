@@ -1,0 +1,2 @@
+# MiNiPic
+Site for images
